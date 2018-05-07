@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-subtract-button',
+  selector: 'subtract-button',
   templateUrl: './subtract-button.component.html',
   styleUrls: ['./subtract-button.component.css']
 })

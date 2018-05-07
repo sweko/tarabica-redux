@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-general-container',
+  selector: 'general-container',
   templateUrl: './general-container.component.html',
   styleUrls: ['./general-container.component.css']
 })

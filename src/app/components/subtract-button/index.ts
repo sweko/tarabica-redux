@@ -1,1 +1,1 @@
-export * from './add-button.component';
+export * from './subtract-button.component';
