@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'display-container',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./display-container.component.css']
 })
 export class DisplayContainerComponent implements OnInit {
+
+  @Input() value: number;
 
   constructor() { }
 

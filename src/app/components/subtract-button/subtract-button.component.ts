@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'subtract-button',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubtractButtonComponent implements OnInit {
 
+  @Input() value: number;
+  @Output() clicked: EventEmitter<number> = new EventEmitter()
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  subtract() {
+    this.clicked.emit(this.value - 1);
   }
 
 }
