@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  value: number;
+
   title = 'My #Tarabica18 app';
+
+  valueChanged(value) {
+    this.value = value;
+  }
+
 }
