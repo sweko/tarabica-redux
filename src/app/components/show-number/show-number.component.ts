@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { StateManager } from 'src/app/services/state-manager';
 
 @Component({
   selector: 'show-number',
@@ -9,7 +10,7 @@ export class ShowNumberComponent implements OnInit {
 
   @Input() value: number;
 
-  constructor() { }
+  constructor(private stateManager: StateManager) { }
 
   ngOnInit() {
   }
