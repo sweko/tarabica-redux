@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { StateManager } from '../../services/state-manager';
 
 @Component({
   selector: 'add-button',
@@ -7,16 +8,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class AddButtonComponent implements OnInit {
 
-  @Input() value: number;
-  @Output() clicked: EventEmitter<number> = new EventEmitter()
-
-  constructor() { }
+  constructor(private stateManager: StateManager) { }
 
   ngOnInit() {
   }
 
   add() {
-    this.clicked.emit(this.value + 1);
+    this.stateManager.state.value = this.stateManager.state.value + 1;
   }
 
 }
