@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { StateManager } from '../../services/state-manager';
+import { StateManager, ActionType } from '../../services/state-manager';
+import { Action } from 'rxjs/internal/scheduler/Action';
 
 @Component({
   selector: 'subtract-button',
@@ -14,7 +15,7 @@ export class SubtractButtonComponent implements OnInit {
   }
 
   subtract() {
-    this.stateManager.state.value = this.stateManager.state.value - 1;
+    this.stateManager.executeAction({ type: ActionType.Decrement })
   }
 
 }

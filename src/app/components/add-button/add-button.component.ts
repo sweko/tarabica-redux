@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { StateManager } from '../../services/state-manager';
+import { StateManager, ActionType } from '../../services/state-manager';
 
 @Component({
   selector: 'add-button',
@@ -14,7 +14,7 @@ export class AddButtonComponent implements OnInit {
   }
 
   add() {
-    this.stateManager.state.value = this.stateManager.state.value + 1;
+    this.stateManager.executeAction({type: ActionType.Increment})
   }
 
 }
