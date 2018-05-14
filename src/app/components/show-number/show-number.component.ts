@@ -8,11 +8,21 @@ import { StateManager } from 'src/app/services/state-manager';
 })
 export class ShowNumberComponent implements OnInit {
 
-  @Input() value: number;
+  value: number;
 
-  constructor(private stateManager: StateManager) { }
+  constructor(private stateManager: StateManager) { 
+    this.stateManager.registerListener(() => this.displayStateValue());
+  }
 
   ngOnInit() {
+    this.displayStateValue();       
   }
+
+  displayStateValue() {
+    const state = this.stateManager.getState();
+    this.value = state.value;
+  }
+
+
 
 }

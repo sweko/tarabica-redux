@@ -7,17 +7,13 @@ import { StateManager } from '../../services/state-manager';
   styleUrls: ['./add-button.component.css']
 })
 export class AddButtonComponent implements OnInit {
-
-  @Input() value: number;
-  @Output() clicked: EventEmitter<number> = new EventEmitter()
-
   constructor(private stateManager: StateManager) { }
 
   ngOnInit() {
   }
 
   add() {
-    this.clicked.emit(this.value + 1);
+    this.stateManager.executeAction({ type: "increment"});
   }
 
 }

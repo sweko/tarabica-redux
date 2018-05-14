@@ -8,16 +8,13 @@ import { StateManager } from '../../services/state-manager';
 })
 export class SubtractButtonComponent implements OnInit {
 
-  @Input() value: number;
-  @Output() clicked: EventEmitter<number> = new EventEmitter()
-
   constructor(private stateManager: StateManager) { }
 
   ngOnInit() {
   }
 
   subtract() {
-    this.clicked.emit(this.value - 1);
+    this.stateManager.executeAction({ type: "decrement"});
   }
 
 }
